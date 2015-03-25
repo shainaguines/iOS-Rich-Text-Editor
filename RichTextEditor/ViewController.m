@@ -49,7 +49,7 @@
 
 - (RichTextEditorFeature)featuresEnabledForRichTextEditor:(RichTextEditor *)richTextEditor
 {
-	return RichTextEditorFeatureFontSize | RichTextEditorFeatureFont | RichTextEditorFeatureAll;
+	return RichTextEditorFeatureBold | RichTextEditorFeatureItalic | RichTextEditorFeatureAll;
 }
 
 @end

@@ -576,15 +576,16 @@
 			
 			NSMutableAttributedString *bulletAttributedString = [[NSMutableAttributedString alloc] initWithString:BULLET_STRING attributes:nil];
             /* I considered manually removing any bold/italic/underline/strikethrough from the text, but 
-             // decided against it. If the user wants bold bullets, let them have bold bullets!
+             // decided against it. If the user wants bold bullets, let them have bold bullets!*/
             UIFont *prevFont = [dictionary objectForKey:NSFontAttributeName];
             UIFont *bulletFont = [UIFont fontWithName:[prevFont familyName] size:[prevFont pointSize]];
             NSMutableDictionary *bulletDict = [dictionary mutableCopy];
             [bulletDict setObject:bulletFont forKey:NSFontAttributeName];
             [bulletDict setObject:0 forKey:NSStrikethroughStyleAttributeName];
             [bulletDict setObject:0 forKey:NSUnderlineStyleAttributeName];
-            */
-            [bulletAttributedString setAttributes:dictionary range:NSMakeRange(0, BULLET_STRING.length)];
+            
+            
+            [bulletAttributedString setAttributes:bulletDict range:NSMakeRange(0, BULLET_STRING.length)];
 			
 			[currentAttributedString insertAttributedString:bulletAttributedString atIndex:range.location];
 			
